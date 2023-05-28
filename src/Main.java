@@ -18,9 +18,69 @@ public class Main {
         //---------------------------------------------------------------
         
          //Print welcome message
-        System.out.println("	Welcome to SANAD " );
+        System.out.println("	Welcome to SANAD " );  
         
         //Renad code
+       int selectin;
+       System.out.println("1 Custmer\\n 2 Freelancer\\n 3 Admin");
+       selectin= read.nextInt();
+       switch(selectin){
+           case 1:
+               System.out.println("1 Place order\\n 2 review");
+               if (selectin == 1){
+                System.out.println();
+               }
+              else if (selectin == 2){
+                System.out.println();
+              }
+              else {
+               System.out.println("Erorr");
+              }
+               break;
+              
+           case 2:
+                System.out.println("1 Place order\\n 2 review\\n 3 Post announcement ");
+                  if (selectin == 1){
+                System.out.println();
+               }
+              else if (selectin == 2){
+                System.out.println();
+              }
+               else if (selectin == 3){
+                System.out.println();
+              }
+              else {
+               System.out.println("Erorr");
+              }
+                break;
+                
+           case 3: 
+                System.out.println("1 Generate report ");
+                 if (selectin == 1){
+                System.out.println();
+               }
+              else {
+               System.out.println("Erorr");
+              }
+               break;            
+               
+           default:
+              System.out.println("Error");
+               break; 
+       
+       
+       
+       
+       
+       
+       }
+            
+        
+        
+        
+        
+        
+      
         
         
           
