@@ -8,16 +8,23 @@ import java.io.PrintWriter;
 public class Main {
 
   
-          public static void main(String[] args) throws FileNotFoundException {
-//        System.out.println("Hello, I'm Maha :) ");
-//        System.out.println("Hello, I'm Razan <3 ");      
-//        System.out.println("Hello, I'm Fatimah <3 ");
-//        System.out.println("Hello, I'm Renad <3 ");
-//        System.out.println("Hello, I'm Sarah ");
+        public static void main(String[] args) throws FileNotFoundException {
+            
+        
+        //Declare scanner
+        Scanner read = new Scanner(System.in); 
 
+        
+        //---------------------------------------------------------------
+        
+         //Print welcome message
+        System.out.println("	Welcome to SANAD " );
+        
+        //Renad code
+        
+        
+          
 
-
-        placeOrder();
        
     }
           
@@ -49,98 +56,36 @@ public class Main {
    System.out.println("Report generated successfully.");
 }
           
-          public static void placeOrder () throws FileNotFoundException{
+          public static void placeOrder (Scanner read) throws FileNotFoundException{
         System.out.println("              Hello dear Customer , Welcome to Sanad!                 ");
         System.out.println("     From here you can choose whatever services you wish to order     ");
         System.out.println("**********************************************************************"+'\n');
         //------------------------------------------------------------------------------------------------------------------ displaying menu
-        // Read the menu from the file
-        File menuFile = new File("src\\menu.txt");
-        Scanner menuScanner = new Scanner(menuFile);
         // Display the menu options to the user
-        
         System.out.println(" - Services menu Options:");
-        while (menuScanner.hasNextLine()) {
-            String menuItem = menuScanner.nextLine();
-            System.out.println("------------------------");
-            System.out.println(menuItem);
-            
-        }
-         //--------------------------------------------------------------------------------------------------------------------- selection
+        System.out.println("1 Programming\n 2 Photography\n 3 Music\n 4 Audio\n 5 Video\n 6 Animation\n 7 Writing\n 8 Translation\n 9 Graphics");
+
+        //--------------------------------------------------------------------------------------------------------------------- selection
         // Prompt the user to select an item from the menu
-        Scanner userInputScanner = new Scanner(System.in);
         System.out.print('\n'+"  - Please enter your selection: ");
-        String userSelection = userInputScanner.nextLine();
-        while (menuScanner.hasNext()) {
-            
-            String command = userInputScanner.next();
-            
-            if (command.equals("Quit"))
-                break;
-            
-            switch (command) {
-                
-                case "1":
-                    
-                    break;
-                
-                case "2":
-                    
-                    break;
-                
-                case "3":
-                    
-                    break;
-                
-                case "4":
-                    
-                    break;
-                    case "5":
-                    
-                    break;
-                
-                case "6":
-                   
-                    break;
-                case "7":
-                   
-                    break;
-                case "8":
-                   
-                    break;
-                case "9":
-                   
-                    break;
-                case "10":
-                   
-                    break;
-                
-            }
-            System.out.println("Wrong input");
+        String userSelection = read.nextLine();
+        
+         // if statement for the selection   
             
             
-            
-        }
+        
         //--------------------------------------------------------------------------------------------------------------------- payment
         System.out.print("     Great choice, Would you like to proceed to checkout? [ Yes or No] ");
-        // Read the payment options from the file
-        File paymentFile = new File("src\\payment.txt");
-        Scanner paymentScanner = new Scanner(paymentFile); 
-        String userPaymentApproval = userInputScanner.next(); 
-        if ( userPaymentApproval.equals("Yes") && userPaymentApproval.equals("yes")){
-            
-            
-            
+
+        String userPaymentApproval = read.next(); 
+        if ( userPaymentApproval.equalsIgnoreCase("Yes"))
+        {   
             // Display the payment options to the user
             System.out.println('\n'+"     Payment Options:");
-            while (paymentScanner.hasNextLine()) {
-                String paymentOption = paymentScanner.nextLine();
-                System.out.println('\n'+"  - "+paymentOption);
-            }
-
+            System.out.println("1 ApplePay\n 2  credit cards");
             // Prompt the user to select a payment method
             System.out.print('\n'+"    Please enter your payment method: ");
-            String paymentMethod = userInputScanner.next();
+            String paymentMethod = read.next();
             //--------------------------------------------------------------------------------------------------------------- closing with payment
 // Display order summary to the user
 System.out.println('\n'+"********************* Thank you for your order! *********************");
@@ -148,17 +93,27 @@ System.out.println("************************************************************
 System.out.println("   - You ordered option " + userSelection);
 System.out.println("   - Your payment method is " + paymentMethod);
 
-// Close all the scanners
-menuScanner.close();
-paymentScanner.close();
-userInputScanner.close();
-
 //--------------------------------------------------------------------------------------------------------------- end
-        }else if ( userPaymentApproval.equals("No") && userPaymentApproval.equals("no")){
+        }else if ( userPaymentApproval.equalsIgnoreCase("No")){
             System.out.println("************ Thank you for visiting Sanad Website *****************");
             System.out.println("************ we hope that you enjoyed your experience<3 *************");
         }else System.out.println("Wrong input");
         }
+          
+          
+          
+          public static Service postServiceAnnouncement(Scanner read){
+              System.out.println("Enter the Service Name:");
+              String Sname = read.next();
+              System.out.println("Enter the number of the service category:");
+              System.out.println("1 Programming\n 2 Photography\n 3 Music\n 4 Audio\n 5 Video\n 6 Animation\n 7 Writing\n 8 Translation\n 9 Graphics");
+              String Scategory = read.next();
+              Service s = new Service(Sname,Scategory);
+            return null;
+              
+          }
+          
+          
           
           
     }
