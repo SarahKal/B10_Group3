@@ -114,8 +114,25 @@ System.out.println("   - Your payment method is " + paymentMethod);
           }
           
           
-          
-          
+              public static void Review (String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Rate the service (1-5):");
+        int rating = scanner.nextInt();
+
+        if (rating >= 1 && rating <= 5) {
+            System.out.print("Star rating: ");
+            for (int i = 0; i < rating; i++) {
+                System.out.print("★");
+            }
+        } else {
+            System.out.println("Invalid rating. Please enter a number between 1 and 5.");
+        }
+
+        scanner.close();
     }
-    
+}
+          
+          
+       
 
