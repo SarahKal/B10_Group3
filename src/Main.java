@@ -21,47 +21,65 @@ public class Main {
         System.out.println("	Welcome to SANAD " );  
         
         //Renad code
+
        int selectin;
-       System.out.println("1 Custmer\\n 2 Freelancer\\n 3 Admin");
+       // Display the menu options to the user
+       System.out.println("1 Custmer\n 2 Freelancer\n 3 Admin");
        selectin= read.nextInt();
        switch(selectin){
+         //--------------------------------------------------------------- AS a Custmer
            case 1:
-               System.out.println("1 Place order\\n 2 review");
+               System.out.println('\n'+"     Select Options:");
+               System.out.println("1 Place order\n 2 Review");
+
                if (selectin == 1){
-                System.out.println();
+                System.out.println(); 
                }
+               
               else if (selectin == 2){
                 System.out.println();
               }
+              
               else {
-               System.out.println("Erorr");
+               System.out.println("Wrong input");
               }
                break;
-              
+               
+         //--------------------------------------------------------------- AS a Freelancer
            case 2:
-                System.out.println("1 Place order\\n 2 review\\n 3 Post announcement ");
+                System.out.println('\n'+"     Select Options:");
+                System.out.println("1 Place order\n 2 Review\n 3 Post announcement ");
+                
                   if (selectin == 1){
                 System.out.println();
                }
+                  
               else if (selectin == 2){
                 System.out.println();
               }
+              
                else if (selectin == 3){
-                System.out.println();
+               System.out.println();
               }
+               
               else {
-               System.out.println("Erorr");
+               System.out.println("Wrong input");
               }
                 break;
                 
+          //--------------------------------------------------------------- AS an Administrator
            case 3: 
+                System.out.println('\n'+"     Select Options:");
                 System.out.println("1 Generate report ");
+                
                  if (selectin == 1){
                 System.out.println();
+                 }
+                 
+                 else {
+               System.out.println("Wrong input");
                }
-              else {
-               System.out.println("Erorr");
-              }
+              
                break;            
                
            default:
