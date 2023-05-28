@@ -13,7 +13,7 @@ public class Main {
         
         //Declare scanner
         Scanner read = new Scanner(System.in); 
-
+            
         
         //---------------------------------------------------------------
         
@@ -78,7 +78,7 @@ public class Main {
         System.out.print("     Great choice, Would you like to proceed to checkout? [ Yes or No] ");
 
         String userPaymentApproval = read.next(); 
-        if ( userPaymentApproval.equalsIgnoreCase("Yes"))
+        if ( userPaymentApproval.equalsIgnoreCase("Yes") && userPaymentApproval.equalsIgnoreCase("yes") )
         {   
             // Display the payment options to the user
             System.out.println('\n'+"     Payment Options:");
@@ -94,7 +94,7 @@ System.out.println("   - You ordered option " + userSelection);
 System.out.println("   - Your payment method is " + paymentMethod);
 
 //--------------------------------------------------------------------------------------------------------------- end
-        }else if ( userPaymentApproval.equalsIgnoreCase("No")){
+        }else if ( userPaymentApproval.equalsIgnoreCase("No") && userPaymentApproval.equalsIgnoreCase("no")){
             System.out.println("************ Thank you for visiting Sanad Website *****************");
             System.out.println("************ we hope that you enjoyed your experience<3 *************");
         }else System.out.println("Wrong input");
