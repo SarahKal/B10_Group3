@@ -59,7 +59,7 @@ public class Main {
            case 2:
                 System.out.println('\n'+"     Freelancer Menu:");
                 System.out.println("1 Place order\n 2 Review\n 3 Post announcement ");
-                 selectin= read.nextInt();
+               selectin= read.nextInt();
 
                   if (selectin == 1){
                 placeOrder(read,Orders,Services);
@@ -86,7 +86,7 @@ public class Main {
                 System.out.println('\n'+"     Admin Menu:");
                 System.out.println("1 Generate report ");
                 //generateReport();
-                 selectin= read.nextInt();
+               selectin= read.nextInt();
                  if (selectin == 1){
                 System.out.println();
                  }
