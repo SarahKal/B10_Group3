@@ -28,9 +28,10 @@ public class Main {
        System.out.println("              Welcome to SANAD " );  
        int selectin;
        // Display the menu options to the user
-        System.out.println("     Select one of the following options " );  
-
-       System.out.println(" 1 Custmer\n 2 Freelancer\n 3 Admin");
+            
+       while (true) {                
+        System.out.println(" \n    Select one of the following options ");
+                System.out.println(" 1 Custmer\n 2 Freelancer\n 3 Admin");
        selectin= read.nextInt();
        
        switch(selectin){
@@ -105,6 +106,7 @@ public class Main {
            // exit = (read.nextInt() == 0);
    // }
        // read.close();
+        }
         }
         
           
@@ -210,12 +212,13 @@ System.out.println("   - Your payment method is " + paymentMethod);
             System.out.print("Star rating: ");
             for (int i = 0; i < rating; i++) {
                 System.out.print("★");
+                
             }
         } else {
             System.out.println("Invalid rating. Please enter a number between 1 and 5.");
         }
 
-        read.close();
+   
     }
 }
           
