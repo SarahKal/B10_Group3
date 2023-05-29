@@ -36,8 +36,9 @@ public class Main {
        switch(selectin){
          //AS a Custmer
            case 1:
-               System.out.println('\n'+"     Select Options:");
+               System.out.println('\n'+"   Custmer Menu:");
                System.out.println("1 Place order\n 2 Review");
+               selectin= read.nextInt();
 
                if (selectin == 1){
                 placeOrder(read,Orders,Services);
@@ -56,9 +57,10 @@ public class Main {
                
          // AS a Freelancer
            case 2:
-                System.out.println('\n'+"     Select Options:");
+                System.out.println('\n'+"     Freelancer Menu:");
                 System.out.println("1 Place order\n 2 Review\n 3 Post announcement ");
-                
+                 selectin= read.nextInt();
+
                   if (selectin == 1){
                 placeOrder(read,Orders,Services);
                 System.out.println();
@@ -81,9 +83,10 @@ public class Main {
                 
           // AS an Administrator
            case 3: 
-                System.out.println('\n'+"     Select Options:");
+                System.out.println('\n'+"     Admin Menu:");
                 System.out.println("1 Generate report ");
                 //generateReport();
+                selectin= read.nextInt();
                  if (selectin == 1){
                 System.out.println();
                  }
