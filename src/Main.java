@@ -1,5 +1,4 @@
-import java.io.File;
-import java.io.FileNotFoundException;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,7 +8,7 @@ import java.util.ArrayList;
 public class Main {
 
   
-        public static void main(String[] args) throws FileNotFoundException {
+        public static void main(String[] args) {
             
         
         //Declare scanner
@@ -93,11 +92,14 @@ public class Main {
                System.out.println("Wrong input");
                }
               
-               break;            
+               break;
                
-           default:
-              System.out.println("Error");
-               break;       
+               case 4:
+                System.out.println("Exiting program...");
+                System.exit(0);
+                break;
+               default:
+                    System.out.println("Invalid choice. Please try again.");       
        }
        
         }
@@ -149,7 +151,7 @@ public class Main {
         }
         else{
         for (Service element : Services) {
-            System.out.println(element);
+            System.out.println(element.getServiceName());
         }
         //--------------------------------------------------------------------------------------------------------------------- selection
         // Prompt the user to select an item from the menu
@@ -157,14 +159,14 @@ public class Main {
         int userSelection = read.nextInt();
         Service selectedObject = Services.get(userSelection);
         //--------------------------------------------------------------------------------------------------------------------- payment
-        System.out.print("     Great choice, Would you like to proceed to checkout? [ Yes or No] ");
+        System.out.print("    Great choice, Would you like to proceed to checkout? [ Yes or No] ");
 
         String userPaymentApproval = read.next(); 
         if ( userPaymentApproval.equalsIgnoreCase("Yes"))
         {   
             // Display the payment options to the user
             System.out.println('\n'+"     Payment Options:");
-            System.out.println("1 ApplePay\n 2  credit cards");
+            System.out.println(" 1 ApplePay\n 2 credit cards");
             // Prompt the user to select a payment method
             System.out.print('\n'+"    Please enter your payment method: ");
             String paymentMethod = read.next();
@@ -172,7 +174,7 @@ public class Main {
 // Display order summary to the user
 System.out.println('\n'+"********************* Thank you for your order! *********************");
 System.out.println("*********************************************************************");
-System.out.println("   - You ordered " + selectedObject);
+System.out.println("   - You ordered " + selectedObject.getServiceName());
 System.out.println("   - Your payment method is " + paymentMethod);
 
 //--------------------------------------------------------------------------------------------------------------- end
