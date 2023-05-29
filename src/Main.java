@@ -21,11 +21,11 @@ public class Main {
         ArrayList<Order> Orders = new ArrayList<>();
 
         
-         //Print welcome message
-        System.out.println("              Welcome to SANAD " );  
+        //boolean exit = false;
+        //while(!exit){
         
-        //Renad code
-
+         //Print welcome message
+       System.out.println("              Welcome to SANAD " );  
        int selectin;
        // Display the menu options to the user
         System.out.println("     Select one of the following options " );  
@@ -101,8 +101,11 @@ public class Main {
               System.out.println("Error");
                break;       
        }
-   
-    }
+        //System.out.println("\nPress 0 to exit, any other number to return to the menu");
+           // exit = (read.nextInt() == 0);
+   // }
+       // read.close();
+        }
         
           
         public void generateReport(Customer customer,Freelancer freelancer,Order order,Service service,Payment payment ) throws FileNotFoundException {
