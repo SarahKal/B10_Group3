@@ -86,7 +86,7 @@ public class Main {
                 System.out.println('\n'+"     Admin Menu:");
                 System.out.println("1 Generate report ");
                 //generateReport();
-                selectin= read.nextInt();
+                 selectin= read.nextInt();
                  if (selectin == 1){
                 System.out.println();
                  }
