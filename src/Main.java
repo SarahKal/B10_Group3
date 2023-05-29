@@ -152,6 +152,12 @@ public class Main {
         //------------------------------------------------------------------------------------------------------------------ displaying menu
         // Display the menu options to the user
         System.out.println(" - Services menu Options:");
+        //Checking if there are no Services avilble first
+        if(Services.isEmpty()){
+             System.out.println(" - Sorry there are no Services avalible right now please check later");
+             System.exit(0);
+        }
+        else{
         for (Service element : Services) {
             System.out.println(element);
         }
@@ -185,7 +191,7 @@ System.out.println("   - Your payment method is " + paymentMethod);
             System.out.println("************ we hope that you enjoyed your experience<3 *************");
         }else System.out.println("Wrong input");
         }
-          
+          }  
           
           
           public static Service postServiceAnnouncement(Scanner read, ArrayList<Service> Services){
