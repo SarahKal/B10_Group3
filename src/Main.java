@@ -22,18 +22,19 @@ public class Main {
 
         
          //Print welcome message
-        System.out.println("	Welcome to SANAD " );  
+        System.out.println("              Welcome to SANAD " );  
         
         //Renad code
 
        int selectin;
        // Display the menu options to the user
-        System.out.println("	Select one of the following options " );  
+        System.out.println("     Select one of the following options " );  
 
-       System.out.println("1 Custmer\n 2 Freelancer\n 3 Admin");
+       System.out.println(" 1 Custmer\n 2 Freelancer\n 3 Admin");
        selectin= read.nextInt();
+       
        switch(selectin){
-         //--------------------------------------------------------------- AS a Custmer
+         //AS a Custmer
            case 1:
                System.out.println('\n'+"     Select Options:");
                System.out.println("1 Place order\n 2 Review");
@@ -53,7 +54,7 @@ public class Main {
               }
                break;
                
-         //--------------------------------------------------------------- AS a Freelancer
+         // AS a Freelancer
            case 2:
                 System.out.println('\n'+"     Select Options:");
                 System.out.println("1 Place order\n 2 Review\n 3 Post announcement ");
@@ -78,7 +79,7 @@ public class Main {
               }
                 break;
                 
-          //--------------------------------------------------------------- AS an Administrator
+          // AS an Administrator
            case 3: 
                 System.out.println('\n'+"     Select Options:");
                 System.out.println("1 Generate report ");
@@ -95,29 +96,13 @@ public class Main {
                
            default:
               System.out.println("Error");
-               break; 
-       
-       
-       
-       
-       
-       
+               break;       
        }
-            
-        
-        
-        
-        
-        
-      
-        
-        
-          
-
-       
+   
     }
+        
           
-          public void generateReport(Customer customer,Freelancer freelancer,Order order,Service service,Payment payment ) throws FileNotFoundException {
+        public void generateReport(Customer customer,Freelancer freelancer,Order order,Service service,Payment payment ) throws FileNotFoundException {
   
         File outputfile=new File("AdminReport.txt");
         PrintWriter report= new PrintWriter(outputfile);
@@ -144,8 +129,11 @@ public class Main {
    
    System.out.println("Report generated successfully.");
 }
+        
+        //------------------------------------------------------------------------------------------------------------------ displaying menu
+
           
-          public static void placeOrder (Scanner read,ArrayList<Order> Orders,ArrayList<Service> Services){
+        public static void placeOrder (Scanner read,ArrayList<Order> Orders,ArrayList<Service> Services){
         System.out.println("              Hello dear Customer , Welcome to Sanad!                 ");
         System.out.println("     From here you can choose whatever services you wish to order     ");
         System.out.println("**********************************************************************"+'\n');
@@ -192,21 +180,21 @@ System.out.println("   - Your payment method is " + paymentMethod);
         }else System.out.println("Wrong input");
         }
           }  
-          
-          
-          public static Service postServiceAnnouncement(Scanner read, ArrayList<Service> Services){
-              System.out.println("Enter the Service Name:");
-              String Sname = read.next();
-              System.out.println("Enter the number of the service category:");
-              System.out.println("1 Programming\n 2 Photography\n 3 Music\n 4 Audio\n 5 Video\n 6 Animation\n 7 Writing\n 8 Translation\n 9 Graphics");
-              String Scategory = read.next();
-              Services.add(new Service(Sname, Scategory));
-              
-            return null;
-              
+        
+        //------------------------------------------------------------------------------------------------------------------ displaying menu
+
+             
+        public static void postServiceAnnouncement(Scanner read, ArrayList<Service> Services){
+            System.out.println("Enter the Service Name:");
+            String Sname = read.next();
+            System.out.println("Enter the number of the service category:");
+            System.out.println("1 Programming\n 2 Photography\n 3 Music\n 4 Audio\n 5 Video\n 6 Animation\n 7 Writing\n 8 Translation\n 9 Graphics");
+            String Scategory = read.next();
+            Services.add(new Service(Sname, Scategory));           
           }
           
-          
+        //------------------------------------------------------------------------------------------------------------------ displaying menu
+
         public static void Review (Scanner read) {
 
         System.out.println("Rate the service (1-5):");
