@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 public class Main {
 
   
@@ -16,6 +17,9 @@ public class Main {
             
         
         //---------------------------------------------------------------
+        ArrayList<Service> Services = new ArrayList<>();
+        ArrayList<Order> Orders = new ArrayList<>();
+
         
          //Print welcome message
         System.out.println("	Welcome to SANAD " );  
@@ -24,6 +28,8 @@ public class Main {
 
        int selectin;
        // Display the menu options to the user
+        System.out.println("	Select one of the following options " );  
+
        System.out.println("1 Custmer\n 2 Freelancer\n 3 Admin");
        selectin= read.nextInt();
        switch(selectin){
@@ -33,10 +39,12 @@ public class Main {
                System.out.println("1 Place order\n 2 Review");
 
                if (selectin == 1){
+                placeOrder(read,Orders,Services);
                 System.out.println(); 
                }
                
               else if (selectin == 2){
+                  Review(read);
                 System.out.println();
               }
               
@@ -51,14 +59,17 @@ public class Main {
                 System.out.println("1 Place order\n 2 Review\n 3 Post announcement ");
                 
                   if (selectin == 1){
+                placeOrder(read,Orders,Services);
                 System.out.println();
                }
                   
               else if (selectin == 2){
+                Review(read);
                 System.out.println();
               }
               
                else if (selectin == 3){
+               postServiceAnnouncement(read,Services);
                System.out.println();
               }
                
@@ -71,7 +82,7 @@ public class Main {
            case 3: 
                 System.out.println('\n'+"     Select Options:");
                 System.out.println("1 Generate report ");
-                
+                //generateReport();
                  if (selectin == 1){
                 System.out.println();
                  }
@@ -134,29 +145,26 @@ public class Main {
    System.out.println("Report generated successfully.");
 }
           
-          public static void placeOrder (Scanner read) throws FileNotFoundException{
+          public static void placeOrder (Scanner read,ArrayList<Order> Orders,ArrayList<Service> Services){
         System.out.println("              Hello dear Customer , Welcome to Sanad!                 ");
         System.out.println("     From here you can choose whatever services you wish to order     ");
         System.out.println("**********************************************************************"+'\n');
         //------------------------------------------------------------------------------------------------------------------ displaying menu
         // Display the menu options to the user
         System.out.println(" - Services menu Options:");
-        System.out.println("1 Programming\n 2 Photography\n 3 Music\n 4 Audio\n 5 Video\n 6 Animation\n 7 Writing\n 8 Translation\n 9 Graphics");
-
+        for (Service element : Services) {
+            System.out.println(element);
+        }
         //--------------------------------------------------------------------------------------------------------------------- selection
         // Prompt the user to select an item from the menu
         System.out.print('\n'+"  - Please enter your selection: ");
-        String userSelection = read.nextLine();
-        
-         // if statement for the selection   
-            
-            
-        
+        int userSelection = read.nextInt();
+        Service selectedObject = Services.get(userSelection);
         //--------------------------------------------------------------------------------------------------------------------- payment
         System.out.print("     Great choice, Would you like to proceed to checkout? [ Yes or No] ");
 
         String userPaymentApproval = read.next(); 
-        if ( userPaymentApproval.equalsIgnoreCase("Yes") && userPaymentApproval.equalsIgnoreCase("yes") )
+        if ( userPaymentApproval.equalsIgnoreCase("Yes"))
         {   
             // Display the payment options to the user
             System.out.println('\n'+"     Payment Options:");
@@ -168,11 +176,11 @@ public class Main {
 // Display order summary to the user
 System.out.println('\n'+"********************* Thank you for your order! *********************");
 System.out.println("*********************************************************************");
-System.out.println("   - You ordered option " + userSelection);
+System.out.println("   - You ordered " + selectedObject);
 System.out.println("   - Your payment method is " + paymentMethod);
 
 //--------------------------------------------------------------------------------------------------------------- end
-        }else if ( userPaymentApproval.equalsIgnoreCase("No") && userPaymentApproval.equalsIgnoreCase("no")){
+        }else if ( userPaymentApproval.equalsIgnoreCase("No")){
             System.out.println("************ Thank you for visiting Sanad Website *****************");
             System.out.println("************ we hope that you enjoyed your experience<3 *************");
         }else System.out.println("Wrong input");
@@ -180,23 +188,23 @@ System.out.println("   - Your payment method is " + paymentMethod);
           
           
           
-          public static Service postServiceAnnouncement(Scanner read){
+          public static Service postServiceAnnouncement(Scanner read, ArrayList<Service> Services){
               System.out.println("Enter the Service Name:");
               String Sname = read.next();
               System.out.println("Enter the number of the service category:");
               System.out.println("1 Programming\n 2 Photography\n 3 Music\n 4 Audio\n 5 Video\n 6 Animation\n 7 Writing\n 8 Translation\n 9 Graphics");
               String Scategory = read.next();
-              Service s = new Service(Sname,Scategory);
+              Services.add(new Service(Sname, Scategory));
+              
             return null;
               
           }
           
           
-              public static void Review (String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        public static void Review (Scanner read) {
 
         System.out.println("Rate the service (1-5):");
-        int rating = scanner.nextInt();
+        int rating = read.nextInt();
 
         if (rating >= 1 && rating <= 5) {
             System.out.print("Star rating: ");
@@ -207,7 +215,7 @@ System.out.println("   - Your payment method is " + paymentMethod);
             System.out.println("Invalid rating. Please enter a number between 1 and 5.");
         }
 
-        scanner.close();
+        read.close();
     }
 }
           
