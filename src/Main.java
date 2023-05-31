@@ -108,32 +108,26 @@ public class Main {
         }
         
           
-        public void generateReport(Customer customer,Freelancer freelancer,Order order,Service service,Payment payment ) throws FileNotFoundException {
+        public void generateReport( ArrayList<Service> Services,ArrayList<Order> Orders ) throws FileNotFoundException {
   
         File outputfile=new File("AdminReport.txt");
         PrintWriter report= new PrintWriter(outputfile);
         report.println("-----------ADMIN REPORT-----------");
+        for(Order order: Orders){
         report.println("--ORDER DATA--");
         report.println("ORDER NUMBER : "+order.OrderNumber);
         report.println("ORDER STATUS : "+order.OrderStatus);
-        report.println();// for order date 
-        report.println("--SERVICE DATA--");
-        report.println("SERVICE NAME : "+service.ServiceName);
-        report.println("--CUSTOMER DATA--");
-        report.println("CUSTOMER NAME : "+customer.customerName);
-        report.println("CUSTOMER ID : "+customer.customerID);
-        report.println("CUSTOMER EMAIL : "+customer.customerEmail);
-        report.println("--FREELANCER DATA--");
-        report.println("FREELANCER NAME : "+freelancer.FreelancerName);
-        report.println("FREELANCER ID : "+freelancer.FreelancerID);
-        report.println("FREELANCER EMAIL : "+freelancer.FreelancerEmail);
-        report.println("--PAYMENT DATA--");
-        report.println();
-        //i want to add somthing telling the price of the service 
+        report.println("ORDER DATE : "+order.OrderDate);// for order date    
+        }
+        for (Service service:Services){
+           report.println("--SERVICE DATA--");
+        report.println("SERVICE NAME : "+service.ServiceName); 
+        }
         report.println("----------END OF THE REPORT----------");
         report.close();
    
    System.out.println("Report generated successfully.");
+
 }
         
         //------------------------------------------------------------------------------------------------------------------ displaying menu
