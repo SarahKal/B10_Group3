@@ -10,7 +10,7 @@ public class Main {
   
     
     
-        public static void main(String[] args) {
+        public static void main(String[] args) throws FileNotFoundException{
             
         
         //Declare scanner
@@ -84,10 +84,11 @@ public class Main {
            case 3: 
                 System.out.println('\n'+"     Admin Menu:");
                 System.out.println("1 Generate report ");
-                //generateReport();
                selectin= read.nextInt();
                  if (selectin == 1){
-                System.out.println();
+                generateReport(Services,Orders);
+                  System.out.println();
+
                  }
                  
                  else {
@@ -108,7 +109,7 @@ public class Main {
         }
         
           
-        public void generateReport( ArrayList<Service> Services,ArrayList<Order> Orders ) throws FileNotFoundException {
+        public static void generateReport( ArrayList<Service> Services,ArrayList<Order> Orders ) throws FileNotFoundException {
   
         File outputfile=new File("AdminReport.txt");
         PrintWriter report= new PrintWriter(outputfile);
