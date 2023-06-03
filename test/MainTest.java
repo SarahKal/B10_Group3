@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -15,7 +10,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author fatimah
+ * @author sarahkalfoot
  */
 public class MainTest {
     
@@ -75,6 +70,19 @@ public class MainTest {
         Main.placeOrder(read, Orders, Services);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of postServiceAnnouncement method, of class Main.
+     */
+    @Test
+    public void testPostServiceAnnouncement() {
+        ArrayList<Service> services = new ArrayList<Service>();
+        Scanner scanner = new Scanner("Test Service\n1\n");
+        postServiceAnnouncement(scanner,services);
+        assertEquals(1, services.size());
+        assertEquals("Test Service", services.get(0).getServiceName());
+        assertEquals("1", services.get(0).getServiceCategory());
     }
 
     /**

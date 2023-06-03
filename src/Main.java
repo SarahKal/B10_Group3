@@ -7,7 +7,6 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 public class Main {
 
-  
     
     
         public static void main(String[] args) throws FileNotFoundException{
@@ -71,7 +70,7 @@ public class Main {
               }
               
                else if (selectin == 3){
-               Service.postServiceAnnouncement(read,Services);
+               postServiceAnnouncement(read,Services);
                System.out.println();
               }
                
@@ -182,7 +181,17 @@ System.out.println("   - Your payment method is " + paymentMethod);
         }
           }  
         
-          
+        //------------------------------------------------------------------------------------------------------------------ displaying menu
+
+        
+            public static void postServiceAnnouncement(Scanner read, ArrayList<Service> Services){
+            System.out.println("Enter the Service Name:");
+            String Sname = read.next();
+            System.out.println("Enter the number of the service category:");
+            System.out.println("1 Programming\n 2 Photography\n 3 Music\n 4 Audio\n 5 Video\n 6 Animation\n 7 Writing\n 8 Translation\n 9 Graphics");
+            String Scategory = read.next();
+            Services.add(new Service(Sname, Scategory));           
+          }
         //------------------------------------------------------------------------------------------------------------------ displaying menu
 
         public static void Review (Scanner read) {
