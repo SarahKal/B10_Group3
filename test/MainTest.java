@@ -68,9 +68,9 @@ public class MainTest {
     @Test
     public void testPlaceOrder() {
         System.out.println("placeOrder");
-        Scanner read = null;
-        ArrayList<Order> Orders = null;
-        ArrayList<Service> Services = null;
+        Scanner read =new Scanner("Test Order\n1\n");
+        ArrayList<Order> Orders =  new ArrayList<Order>();
+        ArrayList<Service> Services =  new ArrayList<Service>();
         Main.placeOrder(read, Orders, Services);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
