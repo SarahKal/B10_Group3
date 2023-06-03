@@ -1,39 +1,40 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  *
- * @author sarahkalfoot
+ * @author fatimah
  */
 public class MainTest {
     
     public MainTest() {
     }
     
-    @BeforeAll
+    @BeforeClass
     public static void setUpClass() {
     }
     
-    @AfterAll
+    @AfterClass
     public static void tearDownClass() {
     }
     
-    @BeforeEach
+    @Before
     public void setUp() {
     }
     
-    @AfterEach
+    @After
     public void tearDown() {
     }
 
@@ -68,24 +69,12 @@ public class MainTest {
     @Test
     public void testPlaceOrder() {
         System.out.println("placeOrder");
-        Scanner read =new Scanner("Test Order\n1\n");
-        ArrayList<Order> Orders =  new ArrayList<Order>();
-        ArrayList<Service> Services =  new ArrayList<Service>();
+        Scanner read = null;
+        ArrayList<Order> Orders = null;
+        ArrayList<Service> Services = null;
         Main.placeOrder(read, Orders, Services);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of postServiceAnnouncement method, of class Main.
-     */
-    public void testPostServiceAnnouncement() {
-        ArrayList<Service> services = new ArrayList<Service>();
-        Scanner scanner = new Scanner("Test Service\n1\n");
-        Service.postServiceAnnouncement(scanner, services);
-        assertEquals(1, services.size());
-        assertEquals("Test Service", services.get(0).getServiceName());
-        assertEquals("1", services.get(0).getServiceCategory());
     }
 
     /**
