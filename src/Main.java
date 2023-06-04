@@ -98,7 +98,7 @@ public class Main {
         report.println("-----------ADMIN REPORT-----------");
         for (Order order : Orders) {
             report.println("--ORDER DATA--");
-            report.println("ORDER NUMBER : " + order.OrderNumber);
+            report.println("ORDER NAME : " + order.OrderName);
             report.println("ORDER STATUS : " + order.OrderStatus);
             report.println("ORDER DATE : " + order.OrderDate);// for order date    
         }
