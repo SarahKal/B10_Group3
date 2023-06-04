@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.PrintStream;
 import java.util.Scanner;
 
@@ -38,32 +39,25 @@ public class MainTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of main method, of class Main.
-     */
-    @Test
-    public void testMain() throws Exception {
-        System.out.println("main");
-        String[] args = null;
-        Main.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+    
 
     /**
      * Test of generateReport method, of class Main.
      */
     @Test
     public void testGenerateReport() throws Exception {
-        System.out.println("generateReport");
-        ArrayList<Service> Services = null;
-        ArrayList<Order> Orders = null;
-        Main.generateReport(Services, Orders);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        ArrayList<Service> services = new ArrayList<>();
+        ArrayList<Order> orders = new ArrayList<>();
+
+        // Add some services and orders to the lists
+
+        Main.generateReport(services, orders);
+
+        File outputFile = new File("AdminReport.txt");
+        assertTrue("Output file should exist", outputFile.exists());
+        assertTrue("Output file should not be empty", outputFile.length() > 0);
     }
-    
-    
+
 
     /**
      * Test of placeOrder method, of class Main.
@@ -89,15 +83,13 @@ public class MainTest {
      */
     @Test
     public void testPostServiceAnnouncement() {
-    ArrayList<Service> services = new ArrayList<Service>();
-    ByteArrayInputStream inputStream = new ByteArrayInputStream("Test Service\n1\n".getBytes());
-    Scanner scanner = new Scanner(inputStream);
-    Main.postServiceAnnouncement(scanner,services);
-    System.out.println("services size: " + services.size());
-System.out.println("services: " + services.toString());
-    assertEquals(1, services.size());
-    assertEquals("Test Service", services.get(0).getServiceName());
-    assertEquals("1", services.get(0).getServiceCategory());
+      ArrayList<Service> services = new ArrayList<>();
+        ByteArrayInputStream inputStream = new ByteArrayInputStream("Test Service\ninvalid category\n1\n".getBytes());
+        Scanner scanner = new Scanner(inputStream);
+        Main.postServiceAnnouncement(scanner, services);
+        assertEquals(1, services.size());
+        assertEquals("Test Service", services.get(0).getServiceName());
+        assertEquals("Programming", services.get(0).getServiceCategory());
     }
 
     /**
