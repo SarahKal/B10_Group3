@@ -1,8 +1,2 @@
 -----------ADMIN REPORT-----------
---ORDER DATA--
-ORDER NUMBER : 0
-ORDER STATUS : null
-ORDER DATE : Sun Jun 04 18:59:23 AST 2023
---SERVICE DATA--
-SERVICE NAME : Java
 ----------END OF THE REPORT----------

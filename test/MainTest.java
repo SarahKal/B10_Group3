@@ -89,6 +89,7 @@ public class MainTest {
         assertEquals(1, services.size());
         assertEquals("Test Service", services.get(0).getServiceName());
         assertEquals("Programming", services.get(0).getServiceCategory());
+        
     }
 
 
@@ -100,7 +101,7 @@ public class MainTest {
         String input = "3\n";
         String expectedOutput =  """
                                  Rate the service (1-5):
-                                 Star rating: \u2605\u2605\u2605""";        
+                                 Star rating: \u2605\u2605\u2605"""+'\n' + "********************* Thank you for Rating SANAD services! *********************";        
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outputStream));
         Scanner scanner = new Scanner(new ByteArrayInputStream(input.getBytes()));

@@ -1,5 +1,6 @@
+
 public class Freelancer {
-    
+
     String FreelancerID;
     String FreelancerName;
     String FreelancerEmail;
@@ -32,5 +33,19 @@ public class Freelancer {
         this.FreelancerID = FreelancerID;
         this.FreelancerName = FreelancerName;
         this.FreelancerEmail = FreelancerEmail;
-    }  
+    }
+
+    public static void Register() {
+
+    }
+
+    public static void login() {
+
+    }
+
+    @Override
+    public String toString() {
+        return "Freelancer{" + "FreelancerID=" + FreelancerID + ", FreelancerName=" + FreelancerName + ", FreelancerEmail=" + FreelancerEmail + '}';
+    }
+
 }

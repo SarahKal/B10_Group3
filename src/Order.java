@@ -5,7 +5,6 @@ public class Order {
    Date OrderDate= new Date();
    private Date DeliveryDate = new Date();
    String OrderStatus ;
-   String getOrderNumber;
    String OrderName;
    String PaymentMethod;
 

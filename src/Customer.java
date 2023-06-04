@@ -1,16 +1,17 @@
 
 public class Customer {
+
     String customerID;
     String customerName;
     String customerEmail;
     private String cardInfo;
-    
-    public Customer(String customerID, String customerName,String customerEmail,String cardInfo) {
+
+    public Customer(String customerID, String customerName, String customerEmail, String cardInfo) {
         this.customerID = customerID;
-        this.customerName= customerName;
-        this.customerEmail=customerEmail;
-        this.cardInfo=cardInfo;
-        
+        this.customerName = customerName;
+        this.customerEmail = customerEmail;
+        this.cardInfo = cardInfo;
+
     }
 
     Customer() {
@@ -36,8 +37,8 @@ public class Customer {
     public void setCustomerID(String customerID) {
         this.customerID = customerID;
     }
-    
-     public void setCustomerName(String customerName) {
+
+    public void setCustomerName(String customerName) {
         this.customerName = customerName;
     }
 
@@ -53,21 +54,13 @@ public class Customer {
     public String toString() {
         return "Customer{" + "customerID=" + customerID + ", customerName=" + customerName + ", customerEmail=" + customerEmail + ", cardInfo=" + cardInfo + '}';
     }
-    
-    public static void placeOreder(){
-        
+
+    public static void Register() {
+
     }
-  public static void Register(){
-        
-    }
-    public static void login(){
-        
-    }
-      public static void updateProfile(){
-        
-    }
-        public static void searchForService(){
-        
+
+    public static void login() {
+
     }
 
 }
