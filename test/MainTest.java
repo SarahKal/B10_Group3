@@ -87,12 +87,15 @@ public class MainTest {
      */
     @Test
     public void testPostServiceAnnouncement() {
-        ArrayList<Service> services = new ArrayList<Service>();
-        Scanner scanner = new Scanner("Test Service\n1\n");
-        Main.postServiceAnnouncement(scanner,services);
-        assertEquals(1, services.size());
-        assertEquals("Test Service", services.get(0).getServiceName());
-        assertEquals("1", services.get(0).getServiceCategory());
+    ArrayList<Service> services = new ArrayList<Service>();
+    ByteArrayInputStream inputStream = new ByteArrayInputStream("Test Service\n1\n".getBytes());
+    Scanner scanner = new Scanner(inputStream);
+    Main.postServiceAnnouncement(scanner,services);
+    System.out.println("services size: " + services.size());
+System.out.println("services: " + services.toString());
+    assertEquals(1, services.size());
+    assertEquals("Test Service", services.get(0).getServiceName());
+    assertEquals("1", services.get(0).getServiceCategory());
     }
 
     /**
