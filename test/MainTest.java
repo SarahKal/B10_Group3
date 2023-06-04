@@ -68,13 +68,16 @@ public class MainTest {
      */
     @Test
     public void testPlaceOrder() {
-        System.out.println("placeOrder");
-        Scanner read = null;
-        ArrayList<Order> Orders = null;
-        ArrayList<Service> Services = null;
+    
+ System.out.println("placeOrder");
+        Scanner read = new Scanner("Test Order\n1\n");
+        ArrayList<Order> Orders = new ArrayList<Order>();
+        ArrayList<Service> Services = new ArrayList<Service>();
         Main.placeOrder(read, Orders, Services);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(1, Orders.size());
+        assertEquals("Test Service", Orders.get(0).getServiceName());
+        assertEquals("2", Orders.get(0). getPaymentMethod());
+        assertEquals("pending", Orders.get(0).getOrderStatus());
     }
 
     /**
