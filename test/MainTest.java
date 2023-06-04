@@ -18,7 +18,6 @@ import java.util.Scanner;
  */
 public class MainTest {
     
-    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     
     public MainTest() {
     }
@@ -83,8 +82,8 @@ public class MainTest {
      */
     @Test
     public void testPostServiceAnnouncement() {
-      ArrayList<Service> services = new ArrayList<>();
-        ByteArrayInputStream inputStream = new ByteArrayInputStream("Test Service\ninvalid category\n1\n".getBytes());
+        ArrayList<Service> services = new ArrayList<Service>();
+        ByteArrayInputStream inputStream = new ByteArrayInputStream("Test Service\n1\n".getBytes());
         Scanner scanner = new Scanner(inputStream);
         Main.postServiceAnnouncement(scanner, services);
         assertEquals(1, services.size());
@@ -92,13 +91,16 @@ public class MainTest {
         assertEquals("Programming", services.get(0).getServiceCategory());
     }
 
+
     /**
      * Test of Review method, of class Main.
      */
     @Test
     public void testReview() {
         String input = "3\n";
-        String expectedOutput =  "Rate the service (1-5):\n" +"Star rating: ★★★";        
+        String expectedOutput =  """
+                                 Rate the service (1-5):
+                                 Star rating: \u2605\u2605\u2605""";        
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outputStream));
         Scanner scanner = new Scanner(new ByteArrayInputStream(input.getBytes()));

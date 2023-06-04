@@ -185,14 +185,40 @@ System.out.println("   - Your payment method is " + paymentMethod);
         //------------------------------------------------------------------------------------------------------------------ displaying menu
 
         
-            public static void postServiceAnnouncement(Scanner read, ArrayList<Service> Services){
-            System.out.println("Enter the Service Name:");
-            String Sname = read.next();
-            System.out.println("Enter the number of the service category:");
-            System.out.println("1 Programming\n 2 Photography\n 3 Music\n 4 Audio\n 5 Video\n 6 Animation\n 7 Writing\n 8 Translation\n 9 Graphics");
-            String Scategory = read.next();
-            Services.add(new Service(Sname, Scategory));           
-          }
+           public static void postServiceAnnouncement(Scanner read, ArrayList<Service> Services) {
+    System.out.println("Enter the Service Name:");
+    String Sname = read.nextLine();
+    System.out.println("Enter the number of the service category:");
+    System.out.println("1 Programming\n 2 Photography\n 3 Music\n 4 Audio\n 5 Video\n 6 Animation\n 7 Writing\n 8 Translation\n 9 Graphics");
+    int ScategoryCode = read.nextInt(); // Read the category code as an integer
+    String Scategory = getCategoryName(ScategoryCode); // Map the category code to the category name
+    Services.add(new Service(Sname, Scategory));           
+}
+
+public static String getCategoryName(int categoryCode) {
+    switch (categoryCode) {
+        case 1:
+            return "Programming";
+        case 2:
+            return "Photography";
+        case 3:
+            return "Music";
+        case 4:
+            return "Audio";
+        case 5:
+            return "Video";
+        case 6:
+            return "Animation";
+        case 7:
+            return "Writing";
+        case 8:
+            return "Translation";
+        case 9:
+            return "Graphics";
+        default:
+            return "";
+    }
+}
         //------------------------------------------------------------------------------------------------------------------ displaying menu
 
         public static void Review (Scanner read) {
