@@ -28,7 +28,7 @@ public class Main {
             
        while (true) {                
         System.out.println(" \n    Select one of the following options ");
-                System.out.println(" 1 Custmer\n 2 Freelancer\n 3 Admin");
+                System.out.println(" 1 Custmer\n 2 Freelancer\n 3 Admin\n 4 Exit");
                 selectin= read.nextInt();
        
        switch(selectin){
@@ -135,7 +135,7 @@ public class Main {
           
         public static void placeOrder (Scanner read,ArrayList<Order> Orders,ArrayList<Service> Services){
         System.out.println("              Hello dear Customer , Welcome to Sanad!                 ");
-        System.out.println("     From here you can choose whatever services you wish to order     ");
+        System.out.println("     From here you can choose the services you wish to order     ");
         System.out.println("**********************************************************************"+'\n');
         //------------------------------------------------------------------------------------------------------------------ displaying menu
         // Display the menu options to the user
@@ -186,13 +186,15 @@ System.out.println("   - Your payment method is " + paymentMethod);
 
         
            public static void postServiceAnnouncement(Scanner read, ArrayList<Service> Services) {
-    System.out.println("Enter the Service Name:");
-    String Sname = read.nextLine();
+    System.out.println("Enter Service Name:");
+    String Sname = read.next();
     System.out.println("Enter the number of the service category:");
     System.out.println("1 Programming\n 2 Photography\n 3 Music\n 4 Audio\n 5 Video\n 6 Animation\n 7 Writing\n 8 Translation\n 9 Graphics");
     int ScategoryCode = read.nextInt(); // Read the category code as an integer
     String Scategory = getCategoryName(ScategoryCode); // Map the category code to the category name
-    Services.add(new Service(Sname, Scategory));           
+    Services.add(new Service(Sname, Scategory)); 
+    System.out.println('\n'+"********************* Thank you for your choosing SANAD! *********************");
+    System.out.println("************ Your service announcement has been posted!  *************");
 }
 
 public static String getCategoryName(int categoryCode) {
@@ -232,6 +234,8 @@ public static String getCategoryName(int categoryCode) {
                 System.out.print("★");
                 
             }
+            System.out.println('\n'+"********************* Thank you for your Rating SANAD services! *********************");
+            
         } else {
             System.out.println("Invalid rating. Please enter a number between 1 and 5.");
         }
