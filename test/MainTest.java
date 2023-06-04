@@ -68,16 +68,18 @@ public class MainTest {
      */
     @Test
     public void testPlaceOrder() {
+    String input = "0\nYes\n2\n";
+    ByteArrayInputStream inputStream = new ByteArrayInputStream(input.getBytes());
+    Scanner scanner = new Scanner(inputStream);
+    ArrayList<Order> orders = new ArrayList<>();
+    ArrayList<Service> services = new ArrayList<>();
+    Service service = new Service("Test Service", "1");
+    services.add(service);
+    Main.placeOrder(scanner, orders, services);
+    assertEquals(1, orders.size());
+    assertEquals("Test Service", orders.get(0).getOrderName());
+    assertEquals("2", orders.get(0).getPaymentMethod());
     
- System.out.println("placeOrder");
-        Scanner read = new Scanner("Test Order\n1\n");
-        ArrayList<Order> Orders = new ArrayList<Order>();
-        ArrayList<Service> Services = new ArrayList<Service>();
-        Main.placeOrder(read, Orders, Services);
-        assertEquals(1, Orders.size());
-        assertEquals("Test Service", Orders.get(0).getServiceName());
-        assertEquals("2", Orders.get(0). getPaymentMethod());
-        assertEquals("pending", Orders.get(0).getOrderStatus());
     }
 
     /**

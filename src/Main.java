@@ -166,6 +166,7 @@ public class Main {
             // Prompt the user to select a payment method
             System.out.print('\n'+"    Please enter your payment method: ");
             String paymentMethod = read.next();
+            Orders.add(new Order(Services.get(userSelection).getServiceName(),paymentMethod));
             //--------------------------------------------------------------------------------------------------------------- closing with payment
 // Display order summary to the user
 System.out.println('\n'+"********************* Thank you for your order! *********************");
