@@ -83,11 +83,11 @@ public class MainTest {
     @Test
     public void testPostServiceAnnouncement() {
         ArrayList<Service> services = new ArrayList<Service>();
-        ByteArrayInputStream inputStream = new ByteArrayInputStream("Test Service\n1\n".getBytes());
+        ByteArrayInputStream inputStream = new ByteArrayInputStream("TestService\n1\n".getBytes());
         Scanner scanner = new Scanner(inputStream);
         Main.postServiceAnnouncement(scanner, services);
         assertEquals(1, services.size());
-        assertEquals("Test Service", services.get(0).getServiceName());
+        assertEquals("TestService", services.get(0).getServiceName());
         assertEquals("Programming", services.get(0).getServiceCategory());
         
     }
